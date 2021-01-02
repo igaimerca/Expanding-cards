@@ -1,3 +1,3 @@
 # Expanding-cards
 I built this using javascript, html and css
-![Alt text](https://i.pinimg.com/564x/e9/ca/05/e9ca05201459ac99f8a295a2972ae3af.jpg "Optional title")
+(https://i.pinimg.com/564x/1c/64/6c/1c646c3f14fdc1293a6afbff03f389c6.jpg "Expanding cards using javascript")
