@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expanding cards</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        .container {
+            display: flex;
+            height: 80vh;
+            width: 80vw;
+        }
+        .panel {
+            flex: 0;
+            margin: 10px;
+            border-radius: 50px;
+            position: relative;
+            transition: flex 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            transition: flex 1s;
+        }
+        .panel h3 {
+            color: rgb(255, 255, 255);
+            text-shadow: 3px 3px 3px rgb(10, 168, 10);
+            font-weight: bolder;
+            font-size: 2em;
+            opacity: 0;
+            transition-delay: 1s;
+            transition: opacity 1s;
+        }
+        .panel.active {
+            flex: 1;
+        }
+        .panel.active h3{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="panel" style="background-image: url(img/01.jpg);">
+            <h3>Anaglyph 01</h3>
+        </div>
+
+        <div class="panel" style="background-image: url(img/Anaglyph\ 02.jpg);">
+            <h3>Anaglyph 02</h3>
+        </div>
+        <div class="panel active" style="background-image: url(img/Bottle\ Island\ 05.jpg);">
+            <h3>Bottle Island</h3>
+        </div>
+        <div class="panel" style="background-image: url(img/DuoTone\ 01\ Drew-graham-unsplash.jpg);">
+            <h3>DuoTone 01</h3>
+        </div>
+        <div class="panel" style="background-image: url(img/Duotone\ Slim-emcee-ug-the-poet-truth_from_africa_photography-unsplash.jpg);">
+            <h3>Slim-emcee</h3>
+        </div>
+    </div>
+
+    <script>
+        let panels = document.querySelectorAll('.panel');
+        panels.forEach( panel => {
+            panel.addEventListener('click', () => {
+                removeActiveClasses();
+                panel.classList.add('active');
+            });
+        });
+        function removeActiveClasses() {
+            panels.forEach( panel => {
+                panel.classList.remove('active');
+            })
+        }
+    </script>
+</body>
+</html>
